@@ -1,16 +1,16 @@
 import { Page, expect, test } from "@playwright/test";
 
-test.describe("initial page", () => {
+test.describe("dashboard page", () => {
   let page: Page;
 
   test.beforeAll(async ({ browser, contextOptions }) => {
     const browserContext = await browser.newContext(contextOptions);
     page = await browserContext.newPage();
 
-    await page.goto("http://localhost:3000");
+    await page.goto("http://localhost:3000/dashboard");
   });
 
-  test("true is truthy", async () => {
-    await expect(true).toBeTruthy();
+  test("dashboard라는 글자가 존재합니다.", async () => {
+    await expect(page.getByText("dashboard")).toBeVisible();
   });
 });
