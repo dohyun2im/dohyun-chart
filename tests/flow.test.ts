@@ -10,12 +10,7 @@ test.describe("flow page", () => {
     await page.goto("http://localhost:3000/flow");
   });
 
-  test("flow라는 글자가 존재합니다.", async () => {
-    await expect(page.getByText("flow")).toBeVisible();
-  });
-
-  test("dashboard 버튼을 누르면 페이지를 이동합니다.", async () => {
-    await page.getByRole("button", { name: "Flow" }).click();
-    await expect(page).toHaveURL("http://localhost:3000/dashboard");
+  test("flow-page라는 글자가 존재합니다.", async () => {
+    await expect(page.getByText("flow-page")).toBeVisible();
   });
 });

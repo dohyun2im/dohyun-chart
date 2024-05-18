@@ -1,5 +1,5 @@
 const DashboardPage: React.FC = () => {
-  return <div>dashboard</div>;
+  return <div>dashboard-page</div>;
 };
 
 export default DashboardPage;
