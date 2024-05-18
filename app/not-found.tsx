@@ -1,8 +1,8 @@
 import { PATH } from "@/constants/path";
 import { redirect } from "next/navigation";
 
-const Root = () => {
+const NotFound = () => {
   redirect(PATH.dashboard);
 };
 
-export default Root;
+export default NotFound;
