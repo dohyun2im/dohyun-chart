@@ -1,4 +1,4 @@
-node_modules
-test-results
-.next
+/node_modules
+/test-results
+/.next/
 next-env.d.ts

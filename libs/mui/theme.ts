@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { indigo } from "@mui/material/colors";
+import { lightBlue } from "@mui/material/colors";
 import { koKR } from "@mui/material/locale";
 
 const createMuiTheme = () => {
@@ -17,12 +17,18 @@ const createMuiTheme = () => {
       },
       palette: {
         primary: {
-          main: indigo[600],
+          main: lightBlue[600],
           contrastText: "#FFF"
         },
         secondary: {
-          main: indigo[400],
+          main: lightBlue[400],
           contrastText: "#FFF"
+        }
+      },
+      typography: {
+        fontSize: 13,
+        button: {
+          textTransform: "none"
         }
       }
     },
