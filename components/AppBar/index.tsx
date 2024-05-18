@@ -1,3 +1,5 @@
+"use client";
+
 import { PATH } from "@/constants/path";
 import { CandlestickChartRounded, WavesRounded } from "@mui/icons-material";
 import { Box, AppBar as MuiAppBar, Toolbar, Typography } from "@mui/material";
@@ -10,8 +12,8 @@ const AppBar = () => {
     <Box sx={{ flexGrow: 1 }}>
       <MuiAppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            App
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 600 }}>
+            Dohyun App
           </Typography>
           <LinkButton
             isActivePath={pathname === PATH.dashboard}
