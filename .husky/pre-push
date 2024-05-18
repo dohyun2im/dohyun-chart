@@ -1,0 +1,8 @@
+if [ "$(uname)" == "Darwin" ]; then
+  if lsof -i:3000 >/dev/null; then
+    echo "실행 중인 Next.js 서버를 종료합니다."
+    lsof -t -i:3000 | xargs kill -9
+  fi
+fi
+
+npm run build && npm run test
