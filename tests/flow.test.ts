@@ -6,7 +6,9 @@ test.describe("flow page", () => {
   test.beforeAll(async ({ browser, contextOptions }) => {
     const browserContext = await browser.newContext(contextOptions);
     page = await browserContext.newPage();
-
+    await page.route("/api/flow", (route) => {
+      route.continue();
+    });
     await page.goto("http://localhost:3000/flow");
   });
 
