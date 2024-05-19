@@ -23,7 +23,8 @@ const config: PlaywrightTestConfig = {
   ],
   testDir: "tests",
   testMatch: "*.test.ts",
-  workers: 3
+  workers: 3,
+  retries: 1
 };
 
 export default config;
