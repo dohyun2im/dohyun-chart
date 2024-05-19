@@ -1,7 +1,7 @@
 "use client";
 
+import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { Editor, EditorProps } from "@monaco-editor/react";
-import SqlQueryEditorSkeleton from "../skeletons/SqlQueryEditorSkeleton";
 
 interface Props extends EditorProps {}
 
@@ -11,7 +11,7 @@ const SqlQueryEditor: React.FC<Props> = ({ ...props }) => {
       theme="vs-dark"
       language="sql"
       defaultValue="select * from bitcoin"
-      loading={<SqlQueryEditorSkeleton />}
+      loading={<LoadingSkeleton isLoading={true} backgroundColor="#1e1e1e" height={240} />}
       {...props}
     />
   );

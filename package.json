@@ -1,5 +1,5 @@
 {
-  "name": "dohyun-chart",
+  "name": "dohyun-oneline",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -27,7 +27,11 @@
     "@mui/material-nextjs": "^5.15.11",
     "@tanstack/react-query": "^5.36.2",
     "@tanstack/react-query-devtools": "^5.36.2",
+    "@types/d3": "^7.4.3",
+    "@types/d3-sankey": "^0.12.4",
     "apexcharts": "^3.49.1",
+    "d3": "^7.9.0",
+    "d3-sankey": "^0.12.3",
     "dayjs": "^1.11.11",
     "lodash": "^4.17.21",
     "monaco-editor": "^0.48.0",

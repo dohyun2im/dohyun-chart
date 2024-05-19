@@ -1,5 +1,7 @@
+import SankeyDiagramCard from "@/components/SankeyDiagramCard";
+
 const FlowPage: React.FC = () => {
-  return <div>flow-page</div>;
+  return <SankeyDiagramCard />;
 };
 
 export default FlowPage;

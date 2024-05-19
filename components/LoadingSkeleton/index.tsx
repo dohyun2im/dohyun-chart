@@ -6,17 +6,20 @@ import { PropsWithChildren } from "react";
 
 interface Props extends PropsWithChildren {
   isLoading: boolean;
+  height: number;
+  className?: string;
+  backgroundColor?: string;
 }
 
-const CandleStickChartSkeleton: React.FC<Props> = ({ isLoading, children }) => {
+const LoadingSkeleton: React.FC<Props> = ({ isLoading, height, className, backgroundColor = grey[50], children }) => {
   if (isLoading) {
     return (
       <Skeleton
-        className="candle-stick-chart-skeleton"
-        sx={{ background: grey[50] }}
+        className={className}
+        sx={{ background: backgroundColor }}
         animation="wave"
         width="100%"
-        height={385}
+        height={height}
         variant="rectangular"
       />
     );
@@ -25,4 +28,4 @@ const CandleStickChartSkeleton: React.FC<Props> = ({ isLoading, children }) => {
   return <>{children}</>;
 };
 
-export default CandleStickChartSkeleton;
+export default LoadingSkeleton;

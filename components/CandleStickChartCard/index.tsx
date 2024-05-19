@@ -1,6 +1,6 @@
 "use client";
 
-import CandleStickChartSkeleton from "@/components/skeletons/CandleStickChartSkeleton";
+import LoadingSkeleton from "@/components/LoadingSkeleton";
 import useBTCCandleByDays from "@/hooks/useBTCCandleByDays";
 import { CurrencyBitcoinRounded } from "@mui/icons-material";
 import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 
 const CandleStickChart = dynamic(() => import("@/components/CandleStickChart"), {
   ssr: false,
-  loading: () => <CandleStickChartSkeleton isLoading={true} />
+  loading: () => <LoadingSkeleton className="candle-stick-chart-skeleton" height={385} isLoading={true} />
 });
 
 const CandleStickChartCard: React.FC = () => {
@@ -27,7 +27,7 @@ const CandleStickChartCard: React.FC = () => {
 
       <Card>
         <CardContent>
-          <CandleStickChartSkeleton isLoading={isLoading}>
+          <LoadingSkeleton className="candle-stick-chart-skeleton" height={385} isLoading={isLoading}>
             <CandleStickChart
               data={data
                 ?.map((candle) => ({
@@ -36,7 +36,7 @@ const CandleStickChartCard: React.FC = () => {
                 }))
                 .reverse()}
             />
-          </CandleStickChartSkeleton>
+          </LoadingSkeleton>
         </CardContent>
       </Card>
     </Stack>
