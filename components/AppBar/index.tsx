@@ -13,7 +13,7 @@ const AppBar = () => {
       <MuiAppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 600 }}>
-            Dohyun App
+            Dohyun-Oneline
           </Typography>
           <LinkButton
             isActivePath={pathname === PATH.dashboard}
