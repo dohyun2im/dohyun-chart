@@ -10,7 +10,16 @@ interface Props extends PropsWithChildren {
 
 const CandleStickChartSkeleton: React.FC<Props> = ({ isLoading, children }) => {
   if (isLoading) {
-    return <Skeleton sx={{ background: grey[50] }} animation="wave" width="100%" height={385} variant="rectangular" />;
+    return (
+      <Skeleton
+        className="candle-stick-chart-skeleton"
+        sx={{ background: grey[50] }}
+        animation="wave"
+        width="100%"
+        height={385}
+        variant="rectangular"
+      />
+    );
   }
 
   return <>{children}</>;
