@@ -8,22 +8,23 @@ test.describe("flow page", () => {
     page = await browserContext.newPage();
 
     await page.goto("http://localhost:3000/flow");
-    await page.route("/api/flow", (route) => {
-      route.continue();
-    });
   });
 
-  test("API pending 상태 일 경우 Sankey Diagram는 스켈레톤 UI가 보인 이후 렌더링됩니다.", async () => {
-    await expect(page.locator(".sankey-diagram-skeleton")).toBeVisible();
-
+  test("Sankey Diagram의 Node와 Link가 정상적으로 렌더링됩니다.", async () => {
     await page.route("/api/flow", (route) => {
       route.fulfill({
         status: 200,
         contentType: "application/json",
-        body: JSON.stringify({ nodes: [{ name: "", category: "" }], links: [] })
+        body: JSON.stringify({
+          nodes: [
+            { name: "test node1", category: "Node" },
+            { name: "test node2", category: "Node" }
+          ],
+          links: [{ source: "test node1", target: "test node2", value: 100 }]
+        })
       });
     });
-
-    await expect(page.locator(".sankey-diagram-skeleton")).not.toBeVisible();
+    await expect(page.getByText("test node1")).toBeVisible();
+    await expect(page.getByText("test node2")).toBeVisible();
   });
 });
