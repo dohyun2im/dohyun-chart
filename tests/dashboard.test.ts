@@ -10,7 +10,7 @@ test.describe("dashboard page", () => {
     await page.goto("http://localhost:3000/dashboard");
   });
 
-  test("'비트코인'이라는 글자가 존재합니다.", async () => {
-    await expect(page.getByText("비트코인")).toBeVisible();
+  test("'Bitcoin'이라는 글자가 존재합니다.", async () => {
+    await expect(page.getByText("Bitcoin")).toBeVisible();
   });
 });
