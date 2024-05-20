@@ -6,7 +6,7 @@ import { Box, AppBar as MuiAppBar, Toolbar, Typography } from "@mui/material";
 import { usePathname } from "next/navigation";
 import LinkButton from "../LinkButton";
 
-const AppBar = () => {
+const AppBar: React.FC = () => {
   const pathname = usePathname();
   return (
     <Box sx={{ flexGrow: 1 }}>
