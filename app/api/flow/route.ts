@@ -10,7 +10,7 @@ export function GET() {
       { name: "Root page,layout", category: "Server" },
       { name: "Route: /dashboard", category: "Server" },
       { name: "Route: /flow", category: "Server" },
-      { name: "Route: /api/flow", category: "Server" },
+      { name: "Route: /api/flow (Mock)", category: "Server" },
       { name: "Route: /404", category: "Server" },
 
       { name: "MUi Provider", category: "provider" },
@@ -34,7 +34,7 @@ export function GET() {
       { source: "Root page,layout", target: "Route: /404", value: 10 },
       { source: "Root page,layout", target: "Route: /dashboard", value: 10 },
       { source: "Root page,layout", target: "Route: /flow", value: 10 },
-      { source: "Root page,layout", target: "Route: /api/flow", value: 10 },
+      { source: "Root page,layout", target: "Route: /api/flow (Mock)", value: 10 },
       { source: "Root page,layout", target: "App Bar UI", value: 10 },
       { source: "Root page,layout", target: "MUi Provider", value: 10 },
       { source: "Root page,layout", target: "React-query Provider", value: 10 },
@@ -48,7 +48,7 @@ export function GET() {
 
       { source: "Sankey Diagram UI", target: "React-Query", value: 10 },
       { source: "Candle Stick Chart UI", target: "React-Query", value: 10 },
-      { source: "React-Query", target: "Route: /api/flow", value: 10 },
+      { source: "React-Query", target: "Route: /api/flow (Mock)", value: 10 },
       { source: "React-Query", target: "Upbit Open API", value: 10 }
     ]
   });

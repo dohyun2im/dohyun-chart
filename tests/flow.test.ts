@@ -12,7 +12,7 @@ test.describe("flow page", () => {
     await page.goto("http://localhost:3000/flow");
   });
 
-  test("Sankey Diagram의 Node와 Link가 정상적으로 렌더링됩니다.", async () => {
+  test("/api/flow 응답 값을 통해 Sankey Diagram의 Node와 Link가 정상적으로 렌더링됩니다.", async () => {
     await page.route("/api/flow", (route) => {
       route.fulfill({
         status: 200,
@@ -28,5 +28,6 @@ test.describe("flow page", () => {
     });
     await expect(page.getByText("test node1")).toBeVisible();
     await expect(page.getByText("test node2")).toBeVisible();
+    await expect(page.locator("path")).not.toBeNull();
   });
 });
